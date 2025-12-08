@@ -1,6 +1,6 @@
 # Zava Storefront - ASP.NET Core MVC
 
-A simple e-commerce storefront application built with .NET 6 ASP.NET MVC.
+A simple e-commerce storefront application built with .NET 8 ASP.NET MVC.
 
 ## Features
 
@@ -12,7 +12,7 @@ A simple e-commerce storefront application built with .NET 6 ASP.NET MVC.
 
 ## Technology Stack
 
-- .NET 6
+- .NET 8 (LTS)
 - ASP.NET Core MVC
 - Bootstrap 5
 - Bootstrap Icons
@@ -45,6 +45,11 @@ ZavaStorefront/
     └── images/
         └── products/           # Product images directory
 ```
+
+## Prerequisites
+
+- .NET 8.0 SDK or later
+- Any modern web browser
 
 ## How to Run
 
@@ -116,3 +121,27 @@ The application includes structured logging for:
 - Checkout process
 
 Logs are written to console during development.
+
+## Upgrade Notes
+
+### .NET 8.0 LTS Upgrade (December 2025)
+
+The application has been upgraded from .NET 6.0 to .NET 8.0 LTS to ensure:
+- Long-term support and security updates
+- Improved performance and features
+- Compatibility with modern development tools
+
+**Changes Made:**
+- Updated `TargetFramework` in `ZavaStorefront.csproj` from `net6.0` to `net8.0`
+- Updated Docker base images from .NET 6.0 to .NET 8.0
+  - SDK image: `mcr.microsoft.com/dotnet/sdk:8.0`
+  - Runtime image: `mcr.microsoft.com/dotnet/aspnet:8.0`
+
+**Breaking Changes:**
+- None. The upgrade is fully backward compatible with existing code.
+- No changes to dependencies were required as the project uses standard ASP.NET Core features.
+
+**Testing:**
+- Application builds successfully with .NET 8.0 SDK
+- All existing functionality verified working
+- Docker container builds successfully with new base images
